@@ -56,6 +56,7 @@ for file in files:
     fvar = fvar.replace('/', '_')   #replace *nix path separator with underscore
     fvar = fvar.replace('\\', '_')  #replace DOS path separator with underscore
     fvar = fvar.replace('.', '_')   #replace file extension dot with underscore
+    fvar = fvar.replace('-', '_')   #replace potential namescheme path separator with underscore
 
     output.write("static const unsigned char data{}[] = {{\n".format(fvar))
     output.write("\t/* {} */\n\t".format(file))
